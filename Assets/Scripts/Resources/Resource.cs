@@ -6,13 +6,13 @@ namespace Resources {
 		public int amountPerClick = 5;
 
 		// increases the amount of this Resource
-		public int Amount {
+		public int Owned {
 			get => PlayerPrefs.GetInt(this.name, 1);
 			set => PlayerPrefs.SetInt(this.name, value);
 		}
 
 		public void Produce() {
-			this.Amount += this.amountPerClick;
+			this.Owned += this.amountPerClick;
 		}
 	}
 }

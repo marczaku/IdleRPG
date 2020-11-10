@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8796e54c1bdf471b8f2ef7f5cceade73, type: 3}
   m_Name: StoneMine
   m_EditorClassIdentifier: 
-  costs: 100
-  costsResource: {fileID: 11400000, guid: c41718927120844239b7ad61f84e68a9, type: 2}
+  costs:
+    amount: 1000
+    resource: {fileID: 11400000, guid: f5dc05125b12644f6a5cba166a240e68, type: 2}
   costMultiplier: 1.1
   productionTime: 1
-  productionAmount: 1
-  productionResource: {fileID: 11400000, guid: ec73e34c66bc34434899e6274a030078, type: 2}
+  production:
+    amount: 1
+    resource: {fileID: 11400000, guid: ec73e34c66bc34434899e6274a030078, type: 2}
   productionMultiplier: 1.05

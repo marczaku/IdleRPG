@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace Clicker {
 	[Serializable]
 	public class Purchasable {
+		// TODO: Replace with public StringEvent
 		public Text buttonLabel;
 		ResourceProduction.Data data;
 		string productId;
@@ -33,6 +34,7 @@ namespace Clicker {
 
 		void UpdateCostLabel() {
 			var updatedCosts = this.data.GetActualCosts(this.Amount);
+			// TODO: Replace with public StringEvent
 			this.buttonLabel.text = $"Add {this.productId} for {updatedCosts}";
 		}
 

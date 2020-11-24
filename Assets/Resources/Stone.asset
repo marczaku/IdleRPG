@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bc466bb0a404d9a9fada5f4518eb5b, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
+  color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   amountPerClick: 5

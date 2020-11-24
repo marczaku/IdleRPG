@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace Clicker.ResourceProduction {
 	public class ResourceProducer : MonoBehaviour {
 		public Data Data;
+		// TODO: Replace with public StringEvent
 		[FormerlySerializedAs("goldAmountText")] public Text titleText;
 		public FloatingText popupPrefab;
 		public Purchasable amount;
@@ -38,6 +39,7 @@ namespace Clicker.ResourceProduction {
 		}
 
 		void UpdateTitleLabel() {
+			// TODO: Replace with public StringEvent and Event Listenrs for Data.name and upgrade.Amount
 			this.titleText.text = ToString();
 		}
 
@@ -52,6 +54,7 @@ namespace Clicker.ResourceProduction {
 			productionAmount.Create();
 			var instance = Instantiate(this.popupPrefab, this.transform);
 			instance.GetComponent<Text>().text = $"+{productionAmount}";
+			instance.GetComponent<Text>().color = productionAmount.resource.color;
 		}
 	}
 }

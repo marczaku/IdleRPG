@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bc466bb0a404d9a9fada5f4518eb5b, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
-  goldAmountPerClick: 5
+  color: {r: 1, g: 0.7175809, b: 0, a: 1}
+  amountPerClick: 5

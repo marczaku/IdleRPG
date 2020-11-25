@@ -39,6 +39,7 @@ namespace Currencies.Tests {
 			Assert.AreEqual(new Dollar(1), new Dollar(1));
 			Assert.AreNotEqual(new Dollar(1), new Dollar(2));
 			Assert.AreNotEqual(new Dollar(1), 1);
+			Assert.False(new Dollar(1).Equals(null));
 		}
 		
 		[Test]

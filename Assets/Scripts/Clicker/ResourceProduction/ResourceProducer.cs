@@ -1,13 +1,12 @@
 ﻿using Common;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Clicker.ResourceProduction {
+	
 	public class ResourceProducer : MonoBehaviour {
 		public Data Data;
-		// TODO: Replace with public StringEvent
-		[FormerlySerializedAs("goldAmountText")] public Text titleText;
+		public StringEvent TitleLabelChanged;
 		public FloatingText popupPrefab;
 		public Purchasable amount;
 		public Purchasable upgrade;
@@ -22,12 +21,16 @@ namespace Clicker.ResourceProduction {
 
 		public void Purchase() => this.amount.Purchase();
 		public void Upgrade() => this.upgrade.Purchase();
-
+		
 		void Update() {
 			UpdateProduction();
 			UpdateTitleLabel();
 			this.amount.Update();
 			this.upgrade.Update();
+		}
+
+		public void ResetGame() {
+			
 		}
 
 		void UpdateProduction() {
@@ -38,9 +41,12 @@ namespace Clicker.ResourceProduction {
 			}
 		}
 
+		public void QuitGame() {
+			// changes
+		}
+
 		void UpdateTitleLabel() {
-			// TODO: Replace with public StringEvent and Event Listenrs for Data.name and upgrade.Amount
-			this.titleText.text = ToString();
+			this.TitleLabelChanged.Invoke(ToString());
 		}
 
 		public override string ToString() {

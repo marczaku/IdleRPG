@@ -1,13 +1,12 @@
 using System;
-using Resources;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Clicker {
 	[Serializable]
 	public class Purchasable {
-		// TODO: Replace with public StringEvent
-		public Text buttonLabel;
+		public StringEvent CostsLabelChanged;
+		public ColorEvent CostsLabelColorChanged;
 		ResourceProduction.Data data;
 		string productId;
 
@@ -31,14 +30,13 @@ namespace Clicker {
 			this.Amount += 1;
 			UpdateCostLabel();
 		}
-
+		
 		void UpdateCostLabel() {
 			var updatedCosts = this.data.GetActualCosts(this.Amount);
-			// TODO: Replace with public StringEvent
-			this.buttonLabel.text = $"Add {this.productId} for {updatedCosts}";
+			this.CostsLabelChanged.Invoke($"Add {this.productId} for {updatedCosts}");
 		}
 
 		public void Update() => UpdateTextColor();
-		void UpdateTextColor() => this.buttonLabel.color = this.IsAffordable ? Color.black : Color.red;
+		void UpdateTextColor() => this.CostsLabelColorChanged.Invoke(this.IsAffordable ? Color.black : Color.red);
 	}
 }

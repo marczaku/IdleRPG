@@ -153,8 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af2325a0030e4cf592a2dfa2876dc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 3283643847909769624}
-  resourceNameText: {fileID: 2315835432076707139}
   AmountChanged:
     m_PersistentCalls:
       m_Calls:
@@ -174,17 +172,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2315835432076707139}
         m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3348493499177667448}
-        m_MethodName: set_name
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -219,7 +206,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  resource: {fileID: 0}
+  amountText: {fileID: 3283643847909769624}
+  resourceNameText: {fileID: 2315835432076707139}
 --- !u!114 &1159207941529856418
 MonoBehaviour:
   m_ObjectHideFlags: 0

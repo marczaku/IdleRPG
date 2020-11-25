@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1948157153684422347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704154007827351762}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704154007827351762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948157153684422347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -92.63324, y: -64.70502, z: -1.9691062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1374812354291110761}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5180716211921746249
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +42,7 @@ GameObject:
   - component: {fileID: 5180716211921746248}
   - component: {fileID: 4310924990199828131}
   m_Layer: 0
-  m_Name: GoldProducer
+  m_Name: ResourceProducer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,6 +62,7 @@ RectTransform:
   - {fileID: 5180716212640738334}
   - {fileID: 5180716212555338367}
   - {fileID: 9125184332275921668}
+  - {fileID: 1704154007827351762}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,16 +83,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fbc44c64cac4a0a99762d73dde3e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoldProductionData: {fileID: 0}
-  goldAmountText: {fileID: 5180716212640738329}
-  upgradeButtonLabel: {fileID: 5485803915242519513}
+  Data: {fileID: 0}
+  TitleLabelChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5180716212640738329}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   popupPrefab: {fileID: 7931557911440886001, guid: 4a2c1f99b5e8342469ea5b1efbf4b803,
     type: 3}
-  gold: {fileID: 11400000, guid: c41718927120844239b7ad61f84e68a9, type: 2}
   amount:
-    buttonLabel: {fileID: 5180716212195582697}
+    CostsLabelChanged:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5180716212195582697}
+          m_MethodName: set_text
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    CostsLabelColorChanged:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5180716212555338361}
+          m_MethodName: set_color
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   upgrade:
-    buttonLabel: {fileID: 5485803915242519513}
+    CostsLabelChanged:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5485803915242519513}
+          m_MethodName: set_text
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    CostsLabelColorChanged:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5485803915242519513}
+          m_MethodName: set_color
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4310924990199828131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy
+  m_Text: ABC
 --- !u!1 &5180716212555338364
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +398,7 @@ GameObject:
   - component: {fileID: 5180716212640738328}
   - component: {fileID: 5180716212640738329}
   m_Layer: 5
-  m_Name: AmountText
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

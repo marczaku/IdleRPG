@@ -5,31 +5,37 @@ using UnityEngine.UI;
 
 [Serializable] public class IntEvent : UnityEvent<int>{}
 [Serializable] public class StringEvent : UnityEvent<string>{}
+[Serializable] public class ColorEvent : UnityEvent<Color>{}
 
 namespace Resources {
+	
 	public class ResourceUI : MonoBehaviour {
 
 		public StringEvent AmountChanged;
-		public Text amountText;
-		public Text resourceNameText;
+		public StringEvent ResourceNameChanged;
+		public ColorEvent ResourceColorChanged;
 		Resource resource;
-
-		void Update() {
-			// TODO: These are all more easy to change.
-			// They only require you to add a public event.
-			// And Invoke the event directly within Setup
-			// Method (because the values only change then)
-			// Bonus: You can make color and name changeable
-			// using properties in Resource-Class and connect
-			// the listeners the same way as for Amount.
-			this.resourceNameText.text = this.resource.name;
-			this.amountText.color = this.resource.color;
-			this.resourceNameText.color = this.resource.color;
-		}
 
 		public void SetUp(Resource resource) {
 			this.resource = resource;
+			// State Listener 101:
+			// step 1: subscribe to state change
 			this.resource.OwnedChanged.AddListener(OnOwnedChanged);
+			// step 2: set current state
+			OnOwnedChanged(this.resource.Owned);
+			// State Listeners are used, when you want to know about the current State of Something
+			// e.g.: Show Player Health. If it starts at 3, show 3. If it changes, set it to current value.
+			
+			// Opposed to that, Change Listeners / Event Listeners only listen to changes
+			// For example, if you want to play an animation every time your Gold increases.
+			
+			// => StateListener = EventListener + Initial State
+			
+			// Bonus: You can make color and name changeable
+			// using properties in Resource-Class and connect
+			// the listeners the same way as for Amount.
+			this.ResourceNameChanged.Invoke(resource.name);
+			this.ResourceColorChanged.Invoke(this.resource.color);
 		}
 
 		void OnOwnedChanged(int value) {

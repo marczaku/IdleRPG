@@ -9,8 +9,9 @@ namespace Currencies {
 		}
 
 		public Money ConvertToDollar(Bank bank) {
-			// TODO 1 exchange our moneys to dollar, then add them (so we definitely get Money, and not another wallet)
-			throw new System.NotImplementedException();
+			var aDollar = bank.ExchangeToDollar(this.a);
+			var bDollar = bank.ExchangeToDollar(this.b);
+			return bank.ExchangeToDollar(aDollar.Add(bDollar));
 		}
 	}
 }

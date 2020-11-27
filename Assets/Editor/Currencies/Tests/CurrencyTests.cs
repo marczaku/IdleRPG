@@ -62,6 +62,13 @@ namespace Currencies.Tests {
 		}
 		/*
 		// Exercise 3:
+		this will require Add to work with IMoney, not only with Money.
+		this again will mean, that the wallet works with IMoney instead of Money.
+		Hint:
+		
+		There will be two wallets:
+		First: Wallet(5USD, 100SEK)
+		Second: Wallet(FirstWallet, 10EUR) 
 		[Test]
 		public void ResultForMultipleCurrencies() {
 			var exchangeRates = ??; // euro -> usd 2:1 sek -> usd 10:1
@@ -76,6 +83,8 @@ namespace Currencies.Tests {
 		}
 		
 		// TODO 4:
+		this will require Add and Times to work with IMoney, not only with Money.
+		this again will mean, that the wallet works with IMoney instead of Money.
 		(($5 + 100SEK) + 10 EUR) => USD
 		(($5 + 100SEK) + 10 EUR) => EUR
 		(($5 + 100SEK) + 10 EUR) => SEK

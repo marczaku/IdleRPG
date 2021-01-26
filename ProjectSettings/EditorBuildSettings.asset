@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 292ea8127d0574e35af4e2329629d24b
+  - enabled: 0
     path: Assets/Scenes/IdleClicker.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/HUD.unity
-    guid: 9f190e21befcf4f9c9e442dd56ea74b3
+    path: Assets/Scenes/Blue.unity
+    guid: 6b52c76030c0c4a50869b7c9e5d2166f
+  - enabled: 1
+    path: Assets/Scenes/Green.unity
+    guid: 17623ff5160d64192a21c1cc6a48fecc
+  - enabled: 1
+    path: Assets/Scenes/Red.unity
+    guid: 9ea287ed03759458589ad2662895bc01
   m_configObjects: {}

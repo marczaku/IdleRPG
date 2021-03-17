@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1bc466bb0a404d9a9fada5f4518eb5b, type: 3}
-  m_Name: Gold
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0.7175809, b: 0, a: 1}
-  amountPerClick: 5
-  OwnedChanged:
-    m_PersistentCalls:
-      m_Calls: []
+  m_Script: {fileID: 0}
+  m_Name: ResourceUIAssetReference
+  m_EditorClassIdentifier: Assembly-CSharp:Resources:AssetReferenceEditor
+  reference: {fileID: 3348493499177667451, guid: 076824d3dee934d65be08bdb3c6380a4,
+    type: 3}
